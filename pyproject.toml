@@ -35,6 +35,11 @@ target-version = "py311"
 select = ["E", "F", "I", "N", "W", "UP"]
 ignore = ["E741"]   # allow l, I, etc. (we have lag `l` in HAC code)
 
+[tool.ruff.lint.per-file-ignores]
+# Template demo file: imports `plt`, `np`, `save_figure` to model the canonical
+# demo shape; nothing in the template body uses them yet (that's the point).
+"_template_demo.py" = ["F401", "I001"]
+
 [tool.ruff.format]
 quote-style = "double"
 

@@ -28,13 +28,13 @@ HERE = Path(__file__).parent
 np.random.seed(0)
 
 # %% [markdown]
-# ## §1 — Methodology recap
+# ## §1. Methodology recap {#sec-recap}
 #
 # *(Terse statement of the result the lecture proved. No derivation.
 # Link back to the lecture's section.)*
 
 # %% [markdown]
-# ## §2 — Implementation walkthrough
+# ## §2. Implementation walkthrough {#sec-impl}
 #
 # *(Step-by-step exposition of the code. When a primitive library function
 # is introduced for the first time, hyperlink it to its canonical doc.)*
@@ -43,10 +43,12 @@ np.random.seed(0)
 # (code chunks, alternating with markdown cells)
 
 # %% [markdown]
-# ## §3 — Numerical demonstration
+# ## §3. Numerical demonstration {#sec-demo}
 #
 # *(Concrete worked example. Figures saved with ``save_figure(fig, name, HERE)``
-# to ``./figures/<name>.pdf``; Quarto captures the inline render automatically.)*
+# to ``./figures/<name>.pdf``; Quarto captures the inline render automatically.
+# Cross-link figures with ``@fig-name`` and sections with ``@sec-impl``,
+# ``@sec-recap``, ``@sec-demo``.)*
 
 # %%
 # (demo code that produces figures + tables)

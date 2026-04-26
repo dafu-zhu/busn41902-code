@@ -27,19 +27,17 @@ website:
     contents:
       - index.qmd
       - section: "Lecture demos"
-        contents:
-          # Populated as each lecture is ported in subsequent phases.
-          # Placeholders kept commented out so the sidebar renders cleanly
-          # while still showing the planned shape:
-          # - L1/demo_ak_mean.py
-          # - L2/demo_acf.py
-          # - L2/demo_hac.py
-          # - L3/demo_ak_rts.py
-          # - L3/demo_mishkin.py
-          # - L5/demo_hansen_singleton.py
-          # - L5/demo_mroz.py
-          # - L6/demo_probit.py
-          # - L8/demo_bootstrap.py
+        contents: []
+        # Populated as each lecture is ported. Planned entries:
+        # - L1/demo_ak_mean.py
+        # - L2/demo_acf.py
+        # - L2/demo_hac.py
+        # - L3/demo_ak_rts.py
+        # - L3/demo_mishkin.py
+        # - L5/demo_hansen_singleton.py
+        # - L5/demo_mroz.py
+        # - L6/demo_probit.py
+        # - L8/demo_bootstrap.py
 
 format:
   html:
