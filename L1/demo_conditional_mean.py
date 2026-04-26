@@ -51,6 +51,7 @@ np.random.seed(0)
 # $\sum_{i: d_i = k} y_i$. So the OLS solution recovers exactly the
 # group-mean formula above.
 
+
 # %%
 def conditional_mean_by_bin(d, y, K):
     """Per-bin sample mean of *y* over integer bins of *d*, computed via OLS.
@@ -79,8 +80,8 @@ for k in range(K):
     print(f"  d = {k:2d}: mean log-wage = {meanw[k]:.4f} (n_k = {(d == k).sum():,})")
 
 # %%
-#| label: fig-cond-mean-boxplot
-#| fig-cap: "Distribution of log-wage by education year on the AK data."
+# | label: fig-cond-mean-boxplot
+# | fig-cap: "Distribution of log-wage by education year on the AK data."
 
 fig, ax = plt.subplots(figsize=(10, 4))
 ax.boxplot(
@@ -99,16 +100,23 @@ save_figure(fig, "cond_mean_boxplot", HERE)
 plt.show()
 
 # %%
-#| label: fig-cond-mean
-#| fig-cap: "Per-year conditional mean of log-wage on the AK data."
+# | label: fig-cond-mean
+# | fig-cap: "Per-year conditional mean of log-wage on the AK data."
 
 rng = np.random.default_rng(0)
 idx = rng.choice(len(d), size=5_000, replace=False)
 
 fig, ax = plt.subplots(figsize=(8, 5))
 ax.scatter(d[idx], y[idx], s=4, alpha=0.15, color="gray", label="AK data (5k subsample)")
-ax.plot(np.arange(K), meanw, "o-", color="steelblue", linewidth=2, markersize=6,
-        label="Conditional mean by education")
+ax.plot(
+    np.arange(K),
+    meanw,
+    "o-",
+    color="steelblue",
+    linewidth=2,
+    markersize=6,
+    label="Conditional mean by education",
+)
 ax.set_xlabel("Years of education")
 ax.set_ylabel("Log(wage)")
 ax.legend()

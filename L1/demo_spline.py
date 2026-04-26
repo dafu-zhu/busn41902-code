@@ -57,6 +57,7 @@ np.random.seed(0)
 # We mirror MATLAB so the verification test compares β coefficient-by-
 # coefficient against the reference. Logged as `INC-002` (`cosmetic`).
 
+
 # %%
 def cubic_spline_basis_matrix(d, knots=(12, 16)):
     """Build the $n \\times 6$ truncated-power basis matrix matching MATLAB.
@@ -65,8 +66,12 @@ def cubic_spline_basis_matrix(d, knots=(12, 16)):
     construction *is* the lesson of this demo. See the §2 markdown for
     the truncation-direction note.
     """
-    cols = [np.ones_like(d, dtype=float), d.astype(float),
-            d.astype(float) ** 2, d.astype(float) ** 3]
+    cols = [
+        np.ones_like(d, dtype=float),
+        d.astype(float),
+        d.astype(float) ** 2,
+        d.astype(float) ** 3,
+    ]
     for k in knots:
         cols.append(((d - k) * (d <= k)) ** 3)
     return np.column_stack(cols)
@@ -89,8 +94,8 @@ xs_grid = cubic_spline_basis_matrix(dd, knots=(12, 16))
 spline_curve = xs_grid @ bb
 
 # %%
-#| label: fig-spline
-#| fig-cap: "Cubic-spline curve (knots at 12, 16) over the AK wage scatter."
+# | label: fig-spline
+# | fig-cap: "Cubic-spline curve (knots at 12, 16) over the AK wage scatter."
 
 rng = np.random.default_rng(0)
 idx = rng.choice(len(d), size=5_000, replace=False)
@@ -126,20 +131,25 @@ ols_line = beta_linear[0] + beta_linear[1] * dd
 # Spline curve already computed above as `spline_curve`.
 
 # %%
-#| label: fig-comparison
-#| fig-cap: >
-#|   Three predictors of $\\E[\\log\\text{wage} \\mid \\text{educ}]$ overlaid
-#|   on the AK data: per-year conditional means (blue), OLS BLP line (red
-#|   dashed), cubic spline with knots 12, 16 (green).
+# | label: fig-comparison
+# | fig-cap: >
+# |   Three predictors of $\\E[\\log\\text{wage} \\mid \\text{educ}]$ overlaid
+# |   on the AK data: per-year conditional means (blue), OLS BLP line (red
+# |   dashed), cubic spline with knots 12, 16 (green).
 
 fig, ax = plt.subplots(figsize=(8, 5))
 ax.scatter(d[idx], y[idx], s=4, alpha=0.12, color="gray", label="AK data (5k subsample)")
-ax.plot(dd, meanw, "o-", color="steelblue", linewidth=2, markersize=6,
-        label="Conditional mean by education")
-ax.plot(dd, ols_line, color="firebrick", linestyle="--", linewidth=2,
-        label="OLS line")
-ax.plot(dd, spline_curve, color="seagreen", linewidth=2,
-        label="Cubic spline (knots 12, 16)")
+ax.plot(
+    dd,
+    meanw,
+    "o-",
+    color="steelblue",
+    linewidth=2,
+    markersize=6,
+    label="Conditional mean by education",
+)
+ax.plot(dd, ols_line, color="firebrick", linestyle="--", linewidth=2, label="OLS line")
+ax.plot(dd, spline_curve, color="seagreen", linewidth=2, label="Cubic spline (knots 12, 16)")
 ax.set_xlabel("Years of education")
 ax.set_ylabel("Log(wage)")
 ax.legend(loc="upper left", fontsize=10)

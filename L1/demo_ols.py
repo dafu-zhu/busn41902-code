@@ -52,6 +52,7 @@ np.random.seed(0)
 # than redefine it. The body shown here is byte-identical to
 # `busn41902.regression.ols` (enforced by `tests/test_drift.py`).
 
+
 # %%
 def ols(X, y):  # @save
     """β̂ = (X'X)⁻¹ X'y, computed via np.linalg.solve.
@@ -104,8 +105,8 @@ print(f"n = {len(d):,}")
 print(f"β̂ = ({beta[0]:.6f}, {beta[1]:.6f})")
 
 # %%
-#| label: fig-ols-line
-#| fig-cap: "OLS BLP line over the AK wage scatter (5 000-point subsample for legibility)."
+# | label: fig-ols-line
+# | fig-cap: "OLS BLP line over the AK wage scatter (5 000-point subsample for legibility)."
 
 rng = np.random.default_rng(0)
 idx = rng.choice(len(d), size=5_000, replace=False)
@@ -113,8 +114,14 @@ idx = rng.choice(len(d), size=5_000, replace=False)
 fig, ax = plt.subplots(figsize=(8, 5))
 ax.scatter(d[idx], y[idx], s=4, alpha=0.15, color="gray", label="AK data (5k subsample)")
 dd = np.arange(int(d.min()), int(d.max()) + 1)
-ax.plot(dd, beta[0] + beta[1] * dd, color="red", linestyle="--", linewidth=2,
-        label=f"OLS line: β̂ = ({beta[0]:.3f}, {beta[1]:.3f})")
+ax.plot(
+    dd,
+    beta[0] + beta[1] * dd,
+    color="red",
+    linestyle="--",
+    linewidth=2,
+    label=f"OLS line: β̂ = ({beta[0]:.3f}, {beta[1]:.3f})",
+)
 ax.set_xlabel("Years of education")
 ax.set_ylabel("Log(wage)")
 ax.legend()
