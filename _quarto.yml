@@ -1,0 +1,56 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "L*/demo_*.py"
+  resources:
+    - "L*/figures/*.pdf"
+
+website:
+  title: "BUSN 41902 — Code companion"
+  description: "Python implementations and demos for BUSN 41902 Statistical Inference I"
+  reader-mode: true
+  page-navigation: true
+  navbar:
+    background: light
+    left:
+      - href: index.qmd
+        text: Home
+    right:
+      - icon: github
+        href: https://github.com/dafu-zhu/busn41902-code
+        aria-label: GitHub
+  sidebar:
+    style: docked
+    search: true
+    contents:
+      - index.qmd
+      - section: "Lecture demos"
+        contents:
+          # Populated as each lecture is ported in subsequent phases.
+          # Placeholders kept commented out so the sidebar renders cleanly
+          # while still showing the planned shape:
+          # - L1/demo_ak_mean.py
+          # - L2/demo_acf.py
+          # - L2/demo_hac.py
+          # - L3/demo_ak_rts.py
+          # - L3/demo_mishkin.py
+          # - L5/demo_hansen_singleton.py
+          # - L5/demo_mroz.py
+          # - L6/demo_probit.py
+          # - L8/demo_bootstrap.py
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    code-fold: false
+    code-tools: true
+    code-copy: true
+    toc: true
+    toc-depth: 3
+    fig-width: 8
+    fig-height: 5
+    fig-format: retina
+    smooth-scroll: true

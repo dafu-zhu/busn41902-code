@@ -1,0 +1,57 @@
+---
+title: "BUSN 41902 — Code companion"
+---
+
+## Overview
+
+This site hosts Python implementations and worked numerical demonstrations
+of the methods taught in **BUSN 41902: Statistical Inference I** (Booth PhD
+core econometrics). It is the runnable companion to the LaTeX lecture notes
+in [good-student-note](https://github.com/dafu-zhu/good-student-note) under
+`notes/busn41902/`.
+
+> **Division of labor.** The lecture notes derive the math — *how does it
+> come?* This site shows the math becoming computation — *how is it
+> implemented?* and *how does it behave on data?*
+
+## Page structure
+
+Every demo follows the same three-section layout:
+
+1. **Methodology recap** — terse statement of the result the lecture proved
+   (no derivation; the lecture has it).
+2. **Implementation walkthrough** — step-by-step exposition of the code,
+   linking to canonical library docs (NumPy, SciPy) for primitives used.
+3. **Numerical demonstration** — a concrete worked example with figures
+   and tables. The same code that produced the figures is shown above them.
+
+## Lectures
+
+| Lecture | Topic | Demos |
+|---|---|---|
+| L1 | (TBD) | (in progress) |
+| L2 | (TBD) | (in progress) |
+| L3 | (TBD) | (in progress) |
+| L5 | (TBD) | (in progress) |
+| L6 | (TBD) | (in progress) |
+| L8 | (TBD) | (in progress) |
+
+L4 and L7 have no companion code in the lecturer's materials.
+
+## Algorithm fidelity
+
+All algorithms are implemented from `numpy`/`scipy` primitives, mirroring
+the lecturer's MATLAB. We do **not** delegate the taught algorithm to a
+higher-level library (statsmodels, sklearn) — that would hide exactly the
+thing the code is supposed to demonstrate. Library docs are linked when
+introducing a primitive (e.g. `np.linalg.solve`, `scipy.sparse.spdiags`),
+but the algorithm itself is hand-rolled.
+
+## Inconsistencies
+
+Discrepancies between this code and the lecture notes are tracked in
+[`INCONSISTENCIES.md`](https://github.com/dafu-zhu/busn41902-code/blob/main/INCONSISTENCIES.md).
+
+## Running locally
+
+See [the README](https://github.com/dafu-zhu/busn41902-code#install-local).
