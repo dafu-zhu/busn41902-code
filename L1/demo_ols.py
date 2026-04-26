@@ -105,8 +105,8 @@ print(f"n = {len(d):,}")
 print(f"β̂ = ({beta[0]:.6f}, {beta[1]:.6f})")
 
 # %%
-# | label: fig-ols-line
-# | fig-cap: "OLS BLP line over the AK wage scatter (5 000-point subsample for legibility)."
+#| label: fig-ols-line
+#| fig-cap: "OLS BLP line over the AK wage scatter (5 000-point subsample for legibility)."
 
 rng = np.random.default_rng(0)
 idx = rng.choice(len(d), size=5_000, replace=False)

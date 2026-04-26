@@ -94,8 +94,8 @@ xs_grid = cubic_spline_basis_matrix(dd, knots=(12, 16))
 spline_curve = xs_grid @ bb
 
 # %%
-# | label: fig-spline
-# | fig-cap: "Cubic-spline curve (knots at 12, 16) over the AK wage scatter."
+#| label: fig-spline
+#| fig-cap: "Cubic-spline curve (knots at 12, 16) over the AK wage scatter."
 
 rng = np.random.default_rng(0)
 idx = rng.choice(len(d), size=5_000, replace=False)
@@ -131,11 +131,11 @@ ols_line = beta_linear[0] + beta_linear[1] * dd
 # Spline curve already computed above as `spline_curve`.
 
 # %%
-# | label: fig-comparison
-# | fig-cap: >
-# |   Three predictors of $\\E[\\log\\text{wage} \\mid \\text{educ}]$ overlaid
-# |   on the AK data: per-year conditional means (blue), OLS BLP line (red
-# |   dashed), cubic spline with knots 12, 16 (green).
+#| label: fig-comparison
+#| fig-cap: >
+#|   Three predictors of $\\E[\\log\\text{wage} \\mid \\text{educ}]$ overlaid
+#|   on the AK data: per-year conditional means (blue), OLS BLP line (red
+#|   dashed), cubic spline with knots 12, 16 (green).
 
 fig, ax = plt.subplots(figsize=(8, 5))
 ax.scatter(d[idx], y[idx], s=4, alpha=0.12, color="gray", label="AK data (5k subsample)")

@@ -80,8 +80,8 @@ for k in range(K):
     print(f"  d = {k:2d}: mean log-wage = {meanw[k]:.4f} (n_k = {(d == k).sum():,})")
 
 # %%
-# | label: fig-cond-mean-boxplot
-# | fig-cap: "Distribution of log-wage by education year on the AK data."
+#| label: fig-cond-mean-boxplot
+#| fig-cap: "Distribution of log-wage by education year on the AK data."
 
 fig, ax = plt.subplots(figsize=(10, 4))
 ax.boxplot(
@@ -100,8 +100,8 @@ save_figure(fig, "cond_mean_boxplot", HERE)
 plt.show()
 
 # %%
-# | label: fig-cond-mean
-# | fig-cap: "Per-year conditional mean of log-wage on the AK data."
+#| label: fig-cond-mean
+#| fig-cap: "Per-year conditional mean of log-wage on the AK data."
 
 rng = np.random.default_rng(0)
 idx = rng.choice(len(d), size=5_000, replace=False)
