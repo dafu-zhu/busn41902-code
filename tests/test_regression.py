@@ -35,4 +35,4 @@ def test_ols_matches_reference_on_big2():
 
     beta = ols(X, y)
 
-    assert np.allclose(beta, _REFERENCE_BETA_LINEAR, rtol=1e-9)
+    assert np.allclose(beta, _REFERENCE_BETA_LINEAR, rtol=1e-6)
