@@ -30,7 +30,7 @@ uv run python L1/demo_ak_mean.py    # generates L1/figures/*.pdf
 uv run quarto preview
 ```
 
-Opens a local server at http://localhost:4444 with hot-reload.
+Opens a local server at http://localhost:4848 (Quarto's default port) with hot-reload.
 
 ## Algorithm fidelity
 
