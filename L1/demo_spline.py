@@ -127,7 +127,10 @@ ols_line = beta_linear[0] + beta_linear[1] * dd
 
 # %%
 #| label: fig-comparison
-#| fig-cap: "Three predictors of $\\E[\\log\\text{wage} \\mid \\text{educ}]$ overlaid on the AK data: per-year conditional means (blue), OLS BLP line (red dashed), cubic spline with knots 12, 16 (green)."
+#| fig-cap: >
+#|   Three predictors of $\\E[\\log\\text{wage} \\mid \\text{educ}]$ overlaid
+#|   on the AK data: per-year conditional means (blue), OLS BLP line (red
+#|   dashed), cubic spline with knots 12, 16 (green).
 
 fig, ax = plt.subplots(figsize=(8, 5))
 ax.scatter(d[idx], y[idx], s=4, alpha=0.12, color="gray", label="AK data (5k subsample)")
