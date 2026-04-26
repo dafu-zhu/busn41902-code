@@ -27,9 +27,11 @@ website:
     contents:
       - index.qmd
       - section: "Lecture demos"
-        contents: []
+        contents:
+          - L1/demo_conditional_mean.py
+          - L1/demo_ols.py
+          - L1/demo_spline.py
         # Populated as each lecture is ported. Planned entries:
-        # - L1/demo_ak_mean.py
         # - L2/demo_acf.py
         # - L2/demo_hac.py
         # - L3/demo_ak_rts.py
@@ -52,3 +54,14 @@ format:
     fig-height: 5
     fig-format: retina
     smooth-scroll: true
+    include-in-header:
+      - text: |
+          <script>
+            window.MathJax = {
+              tex: {
+                macros: {
+                  E: "\\operatorname{E}"
+                }
+              }
+            };
+          </script>

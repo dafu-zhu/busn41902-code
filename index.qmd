@@ -29,7 +29,7 @@ Every demo follows the same three-section layout:
 
 | Lecture | Topic | Demos |
 |---|---|---|
-| L1 | (TBD) | (in progress) |
+| L1 | Conditional mean, BLP, OLS, basis approximation | [`demo_conditional_mean`](L1/demo_conditional_mean.html) · [`demo_ols`](L1/demo_ols.html) · [`demo_spline`](L1/demo_spline.html) |
 | L2 | (TBD) | (in progress) |
 | L3 | (TBD) | (in progress) |
 | L5 | (TBD) | (in progress) |
