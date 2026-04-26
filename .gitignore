@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+
+# uv
+.venv/
+.python-version
+
+# Quarto
+/_site/
+.quarto/
+*_files/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
