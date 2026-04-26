@@ -33,7 +33,11 @@ target-version = "py311"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "N", "W", "UP"]
-ignore = ["E741"]   # allow l, I, etc. (we have lag `l` in HAC code)
+ignore = [
+    "E741",   # allow l, I, etc. (we have lag `l` in HAC code)
+    "N803",   # allow uppercase argument names (X, K, D — standard matrix notation)
+    "N806",   # allow uppercase variable names (X, D — standard matrix notation)
+]
 
 [tool.ruff.lint.per-file-ignores]
 # Template demo file: imports `plt`, `np`, `save_figure` to model the canonical
@@ -42,6 +46,11 @@ ignore = ["E741"]   # allow l, I, etc. (we have lag `l` in HAC code)
 
 [tool.ruff.format]
 quote-style = "double"
+# Demo files use Quarto cell-option syntax (`#|` with no space) and the
+# d2l.ai `# @save` mirror marker. Both are invariants the formatter must
+# not rewrite — exclude demo files from `ruff format` while keeping
+# `ruff check` (lint) enabled on them.
+exclude = ["L*/demo_*.py", "_template_demo.py"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -12,6 +12,10 @@ def save_figure(fig: Figure, name: str, base_dir: Path) -> Path:
     to the demo file's own location, independent of the CWD that ``python``
     or ``quarto render`` happens to run from.
 
+    PDF metadata fields ``CreationDate`` and ``ModDate`` are explicitly
+    omitted so re-running a demo produces a byte-identical PDF — this
+    keeps the working tree quiet across CI / reviewer demo re-runs.
+
     Parameters
     ----------
     fig
@@ -29,5 +33,5 @@ def save_figure(fig: Figure, name: str, base_dir: Path) -> Path:
     """
     out = base_dir / "figures" / f"{name}.pdf"
     out.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(out, bbox_inches="tight")
+    fig.savefig(out, bbox_inches="tight", metadata={"CreationDate": None, "ModDate": None})
     return out
