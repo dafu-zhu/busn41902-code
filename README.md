@@ -1,5 +1,8 @@
 # busn41902-code
 
+[![Tests](https://github.com/dafu-zhu/busn41902-code/actions/workflows/tests.yml/badge.svg)](https://github.com/dafu-zhu/busn41902-code/actions/workflows/tests.yml)
+[![Docs](https://github.com/dafu-zhu/busn41902-code/actions/workflows/docs.yml/badge.svg)](https://github.com/dafu-zhu/busn41902-code/actions/workflows/docs.yml)
+
 Python companion code and worked demos for **BUSN 41902: Statistical Inference I** (Booth PhD core econometrics).
 
 This repo is the implementation companion to the LaTeX lecture notes that live at
