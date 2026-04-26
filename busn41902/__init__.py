@@ -7,7 +7,11 @@ Modules will be added per-lecture during the porting phases:
     busn41902.ml        — maximum likelihood (L6)
     busn41902.bootstrap — bootstrap (L8)
     busn41902.data      — dataset loaders
-    busn41902._io       — figure-saving helper
 """
 
-__version__ = "0.1.0"
+from importlib.metadata import PackageNotFoundError, version
+
+try:
+    __version__ = version("busn41902")
+except PackageNotFoundError:
+    __version__ = "unknown"
