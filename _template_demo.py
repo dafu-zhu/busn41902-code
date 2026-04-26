@@ -24,7 +24,13 @@ import numpy as np
 from busn41902._io import save_figure
 # from busn41902.<module> import <fn>     # uncomment per-demo
 
-HERE = Path(__file__).parent
+try:
+    HERE = Path(__file__).resolve().parent
+except NameError:
+    # Quarto / Jupyter context: __file__ isn't defined. Fall back to cwd
+    # which `execute-dir: file` (in _quarto.yml) sets to the demo's dir.
+    HERE = Path.cwd()
+
 np.random.seed(0)
 
 # %% [markdown]
