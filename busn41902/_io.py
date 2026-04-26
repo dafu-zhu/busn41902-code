@@ -29,5 +29,5 @@ def save_figure(fig: Figure, name: str, base_dir: Path) -> Path:
     """
     out = base_dir / "figures" / f"{name}.pdf"
     out.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(out, bbox_inches="tight", dpi=300)
+    fig.savefig(out, bbox_inches="tight")
     return out
